@@ -1,0 +1,10 @@
+name: Keep n8n Alive2
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Chạy mỗi 5 phút
+jobs:
+  ping-n8n:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping n8n
+        run: curl -s https://n8n-5x22.onrender.com/healthz > /dev/null
